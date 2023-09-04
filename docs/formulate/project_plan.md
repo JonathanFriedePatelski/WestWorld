@@ -22,10 +22,24 @@ projects sprint planning
 | :------------ | :-------------------------- | :-------------------------------------------------------- |
 | User          | Record incidents            | A suitable, flexile database schema                       |
 | Product owner | Evaluate costs and benefits | An overview of the project scope and minimum requirements |
-
+| User          | have a clear overview of the job       | want a dashboard     |
+| User          | create, read, upadate and delete an incident       | want a page where this is possible|
+| Product owner          | have an understanding of what is happening with my product       | want a document that says whats being done |
+| developer          | have ease of development       | will be installing tailwind |
+| developer          | have a clear overview of the database       | want a clear design structure|
 ### Technologies
 
 -   PHP 8.2
 -   Laravel 10
 -   Apache
 -   MariaDB 11.1
+
+    # pages
+
+- dashboard with a map and top 3 incidents overview
+- incident reporting  
+- incident index
+
+    # database uml
+
+![alt text](database_uml.png)
