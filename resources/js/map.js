@@ -120,21 +120,6 @@ function loadPOIs() {
         );
 }
 
-function showBorder() {
-    fetch("/data/objects/island.json")
-        .then((response) => response.json())
-        .then((data) => {
-            // Add the scaled and flipped coordinates as a polyline to the map
-            L.polyline(data.features[0].geometry.coordinates[0], {
-                color: "red",
-                weight: 2,
-            }).addTo(map);
-        })
-        .catch((error) => console.error("Error loading island.json:", error));
-}
-
-showBorder();
-
 loadPOIs();
 
 // Create a Leaflet control for the coordinate display
@@ -142,7 +127,7 @@ const coordControl = L.control({
     position: "topright",
 });
 
-coordControl.onAdd = function(map) {
+coordControl.onAdd = function (map) {
     this._div = L.DomUtil.create("div", "coordinate-display");
     this._div.innerHTML = "Hover over the map";
     // Make font white
