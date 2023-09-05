@@ -148,7 +148,7 @@ The web application will contain at least to following pages:
 
 ### Dashboard visual design
 
-![figma design](./dashboard_design.png)
+![figma design](./formulate/dashboard_design.png)
 
 ### Application architecture diagram
 
