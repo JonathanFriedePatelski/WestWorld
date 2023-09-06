@@ -1,0 +1,106 @@
+[
+  {
+    "title": "Mesa",
+    "latitude": 1388,
+    "longitude": 652,
+    "description": "Main park facilities such as visitor arrival and base of operations for Delos.",
+    "type": "facility",
+    "narrative_level": "none"
+  },
+  {
+    "title": "Sweetwater",
+    "latitude": 1162,
+    "longitude": 1037,
+    "description": "This is the town of Sweetwater, where the visitors first arrive by train.",
+    "type": "town",
+    "narrative_level": "peaceful"
+  },
+  {
+    "title": "Sweetwater Hills",
+    "latitude": 1295,
+    "longitude": 1158,
+    "description": "The hills surrounding Sweetwater are home to the park's family-friendly narratives.",
+    "type": "region",
+    "narrative_level": "peaceful"
+  },
+  {
+    "title": "Pariah",
+    "latitude": 608,
+    "longitude": 808,
+    "description": "The town of Pariah is the home of bandits and outlaws.",
+    "type": "town",
+    "narrative_level": "violent"
+  },
+  {
+    "title": "Badlands",
+    "latitude": 926,
+    "longitude": 928,
+    "description": "The Badlands are home to the park's most dangerous clans of bandits.",
+    "type": "region",
+    "narrative_level": "violent"
+  },
+  {
+    "title": "Mines",
+    "latitude": 1156,
+    "longitude": 652,
+    "description": "The mines are a dangerous place to delve into.",
+    "type": "landmark",
+    "narrative_level": "violent"
+  },
+  {
+    "title": "Abernathy Ranch",
+    "latitude": 1400,
+    "longitude": 1088,
+    "description": "The Abernathy Ranch is the home of the Abernathy family.",
+    "type": "landmark",
+    "narrative_level": "peaceful"
+  },
+  {
+    "title": "Ghost Nation",
+    "latitude": 926,
+    "longitude": 1544,
+    "description": "The Ghost Nation is a tribe of hostile Native Americans.",
+    "type": "region",
+    "narrative_level": "violent"
+  },
+  {
+    "title": "Las Mudas",
+    "latitude": 722,
+    "longitude": 1096,
+    "description": "Las Mudas is a border town that has amazing food and drink for guests; the way of life here hasn’t changed since the day it was settled. Visitors are free to make themselves at home and chat in the town square, charm the barkeep into divulging family secrets, or just relax and take a break from the heat. Practically everyone in this town is related and they are very protective of one another. There is a dusty patina, but don't let that fool you, this town proudly carries the scars of showdowns past.",
+    "type": "town",
+    "narrative_level": "peaceful"
+  },
+  {
+    "title": "Agave Plantation",
+    "latitude": 1620,
+    "longitude": 898,
+    "description": "The Agave Plantation is locaction within Westworld. It's a classy resturant with a view over the blue agave fields.",
+    "type": "landmark",
+    "narrative_level": "peaceful"
+  },
+  {
+    "title": "Python Pass",
+    "latitude": 1364,
+    "longitude": 996,
+    "description": "A treacherous climbing experience, Python Pass is where you’ll meet mountain men, trappers, loggers, and miners. The log bridges over the rapids are creaky, so watch your step. Those daring to be there at the beginning of the big cattle drive will find it here...but the cattle tend to attract the wolves. If wolves aren’t to your liking, there are bears, bats, coyotes, and the occasional lost buffalo to keep you on your toes.",
+    "type": "landmark",
+    "narrative_level": "violent"
+  },
+  {
+    "title": "Virgil's Last Stand",
+    "latitude": 1742,
+    "longitude": 1096,
+    "description": "A thrilling narrative...",
+    "type": "landmark",
+    "narrative_level": "violent"
+  },
+  {
+    "title": "Maeve's Homestead",
+    "latitude": 914,
+    "longitude": 1188,
+    "description": "The home of Maeve Millay and her daughter.",
+    "type": "landmark",
+    "narrative_level": "neutral"
+  }
+]
