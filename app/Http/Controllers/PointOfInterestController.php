@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use App\Models\PointOfInterest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class LocationController extends Controller
+class PointOfInterestController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       return Location::all()->toJson();
+        return PointOfInterest::all();
     }
 
     /**
@@ -38,7 +39,7 @@ class LocationController extends Controller
             'narrative_level' => 'required|string',
         ]);
 
-        $location = Location::create($validated);
+        PointOfInterest::create($validated);
     }
 
     /**
@@ -46,7 +47,8 @@ class LocationController extends Controller
      */
     public function show(string $id)
     {
-        return Location::findOrFail($id)->toJson();
+        return PointOfInterest::findOrFail($id)
+            ->toJson();
     }
 
     /**
@@ -72,7 +74,7 @@ class LocationController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return 
+            return;
         }
 
         $data = $request->only([
@@ -84,7 +86,8 @@ class LocationController extends Controller
             'narrative_level' => 'string',
         ]);
 
-        Location::findOrFail($id)->update($data);
+        PointOfInterest::findOrFail($id)
+            ->update($data);
     }
 
     /**
