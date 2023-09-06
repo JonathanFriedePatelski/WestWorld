@@ -91,7 +91,7 @@ function createCustomIcon(color, shape) {
 }
 
 function loadPOIs() {
-    fetch("/data/points_of_interest.json")
+    fetch("/api/pointsofinterest")
         .then((response) => response.json())
         .then((data) => {
             data.forEach((poi) => {
@@ -105,7 +105,7 @@ function loadPOIs() {
                 }).addTo(map);
 
                 marker.bindPopup(
-                    `<b>Title:</b> ${poi.title}<br>
+                    `<b>Title: </b><a href="/pointsofinterest/${poi.id}"> ${poi.title}</a><br>
                     <b>Type:</b> ${poi.type}<br>
                     <b>Narrative Level:</b> ${poi.narrative_level}<br>
                     ${poi.description}`,
@@ -127,7 +127,7 @@ const coordControl = L.control({
     position: "topright",
 });
 
-coordControl.onAdd = function (map) {
+coordControl.onAdd = function(map) {
     this._div = L.DomUtil.create("div", "coordinate-display");
     this._div.innerHTML = "Hover over the map";
     // Make font white
