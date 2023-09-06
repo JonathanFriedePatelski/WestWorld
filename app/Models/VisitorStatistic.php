@@ -9,5 +9,5 @@ class VisitorStatistic extends Model
 {
     use HasFactory;
 
-    
+    public $timestamps = false;
 }

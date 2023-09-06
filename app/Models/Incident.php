@@ -9,14 +9,20 @@ class Incident extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'incident_id',
-        'timestamp',
+        'point_of_interest_id',
         'latitude',
         'longitude',
         'type',
         'severity',
-        'point_of_interest',
+        'occurred_at',
+    ];
+
+    protected $dates = [
+        'timestamp',
     ];
 
     public function location()

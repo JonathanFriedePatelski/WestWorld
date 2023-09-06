@@ -25,6 +25,6 @@ class Crew extends Model
 
     public function hovercraft()
     {
-        return $this->hasOne(Hovercraft::class)->latestOfMany();
+        return $this->hasOne(Hovercraft::class);
     }
 }

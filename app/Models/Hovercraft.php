@@ -10,6 +10,7 @@ class Hovercraft extends Model
     use HasFactory;
 
     protected $fillable = [
+        'crew_id',
         'fuel_level',
         'wear_level',
         'age',
@@ -17,6 +18,6 @@ class Hovercraft extends Model
 
     public function crew()
     {
-        return $this->hasOne(Crew::class)->latestOfMany();
+        return $this->belongsTo(Crew::class);
     }
 }
