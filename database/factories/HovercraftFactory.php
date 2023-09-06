@@ -3,8 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Hovercraft;
-use App\Models\Crew;
-use App\Enums\HoverCraftEnum;
+use App\Enums\WearLevel;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class HovercraftFactory extends Factory
@@ -24,10 +23,9 @@ class HovercraftFactory extends Factory
     public function definition()
     {
         return [
-            'crew_id' => null, // This will be set in the seeder
-            'fuel_level' => $this->faker->numberBetween(0, 100), // Random number between 0 and 100
-            'wear_level' => $this->faker->randomElement(HoverCraftEnum::levels()), // Use Enum values here
-            'age' => $this->faker->numberBetween(0, 20), // Random number between 0 and 20
+            'fuel_level' => $this->faker->numberBetween(0, 100),
+            'wear_level' => $this->faker->randomElement(WearLevel::values()),
+            'age' => $this->faker->numberBetween(0, 20),
         ];
     }
 }

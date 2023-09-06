@@ -24,7 +24,6 @@ class CrewFactory extends Factory
     {
         return [
             'call_sign' => $this->faker->unique()->word,
-            // 'user_id' => User::inRandomOrder()->first()->id,
         ];
     }
 }
