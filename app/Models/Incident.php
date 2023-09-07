@@ -16,6 +16,7 @@ class Incident extends Model
         'point_of_interest_id',
         'latitude',
         'longitude',
+        'description',
         'type',
         'severity',
         'occurred_at',

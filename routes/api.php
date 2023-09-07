@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\PointOfInterestController;
-use App\Models\PointOfInterest;
+use App\Http\Controllers\Api\PointOfInterestController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Api\IncidentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +19,7 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:sanctum')
 //     ->group(function () {
 Route::get('/user', fn (Request $request) => $request->user());
-Route::resource('/pointsofinterest', PointOfInterestController::class);
+Route::get('/pointsofinterest', [PointOfInterestController::class, 'index']);
+Route::post('/incidents/store', [IncidentController::class, 'store']);
+Route::get('/incidents', [IncidentController::class, 'index']);
 // });
