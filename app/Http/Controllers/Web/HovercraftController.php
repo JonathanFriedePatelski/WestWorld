@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
+use App\Models\Hovercraft;
 use Illuminate\Http\Request;
 
-class VisitorStatistics extends Controller
+class HovercraftController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,7 +35,7 @@ class VisitorStatistics extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Hovercraft $hovercraft)
     {
         //
     }
@@ -41,7 +43,7 @@ class VisitorStatistics extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Hovercraft $hovercraft)
     {
         //
     }
@@ -49,7 +51,7 @@ class VisitorStatistics extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Hovercraft $hovercraft)
     {
         //
     }
@@ -57,7 +59,7 @@ class VisitorStatistics extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Hovercraft $hovercraft)
     {
         //
     }

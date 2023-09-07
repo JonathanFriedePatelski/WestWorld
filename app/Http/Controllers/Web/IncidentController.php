@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
-use App\Models\Crew;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CrewController extends Controller
+class IncidentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class CrewController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Crew $crew)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +42,7 @@ class CrewController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Crew $crew)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +50,7 @@ class CrewController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Crew $crew)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +58,7 @@ class CrewController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Crew $crew)
+    public function destroy(string $id)
     {
         //
     }
