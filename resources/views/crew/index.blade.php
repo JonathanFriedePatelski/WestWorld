@@ -5,12 +5,26 @@
         </h2>
     </x-slot>
 
-    <ul>
-        @foreach($crews as $crew)
-        <li>
-            {{ $crew->call_sign }}
-        </li>
-        @endforeach
-    </ul>
-
+    <div class="py-8">
+        <div class="max-w-7xl m-auto sm:px-6 lg:px-8">
+            <div class="bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
+                <table class="min-w-full bg-gray-900 ">
+                    <thead class="bg-gray-900">
+                        <tr>
+                            <th class="px-6 py-3 bg-indigo-950 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                            <th class="px-6 py-3 bg-indigo-950 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Call Sign</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($crews as $crew)
+                        <tr>
+                            <td class="px-6 py-4">{{ $crew->id }}</td>
+                            <td class="px-6 py-4">{{ $crew->call_sign }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </x-app-layout>

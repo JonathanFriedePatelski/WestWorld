@@ -13,7 +13,7 @@ class VisitorStatisticsController extends Controller
      */
     public function index()
     {
-        return VisitorStatistic::all();
+        return view('visitorStatistic.show', ['visitorStatistic' => VisitorStatistic::all()]);
     }
 
     /**

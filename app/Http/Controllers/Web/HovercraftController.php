@@ -14,7 +14,6 @@ class HovercraftController extends Controller
     public function index()
     {
         return view('hovercraft.index', ['hovercrafts' => Hovercraft::orderBy('fuel_level', 'desc')->get()]);
-
     }
 
     /**
