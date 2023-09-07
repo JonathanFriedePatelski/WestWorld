@@ -1,4 +1,4 @@
-// Create a Leaflet map with CRS.Simple
+    // Create a Leaflet map with CRS.Simple
 const map = L.map("map", {
     crs: L.CRS.Simple,
     minZoom: -1,
