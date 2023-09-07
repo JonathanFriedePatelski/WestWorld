@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\VisitorStatistic;
 use Illuminate\Http\Request;
 
-class VisitorStatistics extends Controller
+class VisitorStatisticsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return VisitorStatistic::all();
     }
 
     /**
@@ -34,9 +35,9 @@ class VisitorStatistics extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(VisitorStatistic $visitorStatistic)
     {
-        //
+        return $visitorStatistic;
     }
 
     /**

@@ -45,10 +45,9 @@ class PointOfInterestController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(PointOfInterest $pointOfInterest)
     {
-        return PointOfInterest::findOrFail($id)
-            ->toJson();
+        return $pointOfInterest;
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Incident;
 use Illuminate\Http\Request;
 
 class IncidentController extends Controller
@@ -12,7 +13,7 @@ class IncidentController extends Controller
      */
     public function index()
     {
-        //
+        return Incident::all();
     }
 
     /**
@@ -34,9 +35,9 @@ class IncidentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Incident $incident)
     {
-        //
+        return $incident;
     }
 
     /**

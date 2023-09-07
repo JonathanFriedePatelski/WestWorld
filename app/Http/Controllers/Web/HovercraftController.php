@@ -13,7 +13,7 @@ class HovercraftController extends Controller
      */
     public function index()
     {
-        //
+        return Hovercraft::all();
     }
 
     /**
@@ -37,7 +37,7 @@ class HovercraftController extends Controller
      */
     public function show(Hovercraft $hovercraft)
     {
-        //
+        return $hovercraft;
     }
 
     /**

@@ -15,13 +15,13 @@
                     <x-nav-link class="text-white" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         Dashboard
                     </x-nav-link>
-                    <x-nav-link class="text-white" :href="route('dashboard')" :active="request()->routeIs('incidents')">
+                    <x-nav-link class="text-white" :href="route('incidents.index')" :active="request()->routeIs('incidents')">
                         Incidents
                     </x-nav-link>
-                    <x-nav-link class="text-white" :href="route('dashboard')" :active="request()->routeIs('crews')">
+                    <x-nav-link class="text-white" :href="route('crews.index')" :active="request()->routeIs('crews')">
                         Crews
                     </x-nav-link>
-                    <x-nav-link class="text-white" :href="route('dashboard')" :active="request()->routeIs('hovercraft')">
+                    <x-nav-link class="text-white" :href="route('hovercraft.index')" :active="request()->routeIs('hovercraft')">
                         Hovercraft
                     </x-nav-link>
                 </div>

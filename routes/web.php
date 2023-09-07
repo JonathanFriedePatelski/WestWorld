@@ -18,6 +18,12 @@ Route::middleware(['auth', 'verified'])
     ->group(function () {
         Route::view('/', 'index');
         Route::view('/dashboard', 'dashboard')->name('dashboard');
+        Route::resources([
+            'crews' => Web\CrewController::class,
+            'hovercraft' => Web\HovercraftController::class,
+            'incidents' => Web\IncidentController::class,
+            'pointsofinterest' => Web\PointOfInterestController::class,
+        ]);
     });
 
 Route::middleware('auth')->group(function () {

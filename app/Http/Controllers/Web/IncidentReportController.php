@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Incident;
 use App\Models\IncidentReport;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class IncidentReportController extends Controller
      */
     public function index()
     {
-        //
+        return Incident::pluck('report', 'id');
     }
 
     /**
@@ -35,9 +36,9 @@ class IncidentReportController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(IncidentReport $incidentReport)
+    public function show(Incident $incident)
     {
-        //
+        return $incident->pluck('report', 'id');
     }
 
     /**
