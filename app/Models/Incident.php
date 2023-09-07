@@ -25,9 +25,14 @@ class Incident extends Model
         'timestamp',
     ];
 
-    public function location()
+    public function pointOfInterest()
     {
-        return $this->belongsTo(Location::class, 'point_of_interest', 'title');
+        return $this->belongsTo(PointOfInterest::class, 'point_of_interest_id');
+    }
+
+    public function crews()
+    {
+        return $this->belongsToMany(Crew::class);
     }
 
     public function getIncidentTypeAttribute()

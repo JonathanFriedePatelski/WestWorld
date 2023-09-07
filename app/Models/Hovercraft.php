@@ -16,6 +16,11 @@ class Hovercraft extends Model
         'age',
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function crew()
     {
         return $this->belongsTo(Crew::class);

@@ -13,14 +13,19 @@ class Crew extends Model
         'call_sign',
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function users()
     {
         return $this->hasMany(User::class);
     }
 
-    public function crewIncident()
+    public function incidents()
     {
-        return $this->hasMany(Incident::class);
+        return $this->belongsToMany(Incident::class);
     }
 
     public function hovercraft()
