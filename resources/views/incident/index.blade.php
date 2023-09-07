@@ -22,7 +22,7 @@
                         </thead>
                         <tbody>
                             @foreach($incidents as $incident)
-                            <tr>
+                            <tr class="hover:bg-gray-950 cursor-pointer" onclick="window.location.href='{{ route("incidents.show", $incident->id) }}'">
                                 <td class="px-6 py-4 whitespace-no-wrap">{{ $incident->id }}</td>
                                 <td class="px-6 py-4 whitespace-no-wrap">{{ $incident->latitude }}</td>
                                 <td class="px-6 py-4 whitespace-no-wrap">{{ $incident->longitude }}</td>

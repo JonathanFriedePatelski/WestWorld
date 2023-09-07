@@ -17,8 +17,8 @@
                     </thead>
                     <tbody>
                         @foreach($crews as $crew)
-                        <tr>
-                            <td class="px-6 py-4">{{ $crew->id }}</td>
+                        <tr class="hover:bg-gray-950 cursor-pointer" onclick="window.location.href='{{ route("crews.show", $crew->id) }}'">
+                            <td class=" px-6 py-4">{{ $crew->id }}</td>
                             <td class="px-6 py-4">{{ $crew->call_sign }}</td>
                         </tr>
                         @endforeach

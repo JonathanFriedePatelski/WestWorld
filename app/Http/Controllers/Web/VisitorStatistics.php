@@ -37,7 +37,7 @@ class VisitorStatisticsController extends Controller
      */
     public function show(VisitorStatistic $visitorStatistic)
     {
-        return $visitorStatistic;
+        return view('visitorStatistic.show', ['visitorStatistic' => $visitorStatistic]);
     }
 
     /**

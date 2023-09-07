@@ -37,7 +37,7 @@ class CrewController extends Controller
      */
     public function show(Crew $crew)
     {
-        return $crew;
+        return view('crew.show', ['crew' => $crew]);
     }
 
     /**

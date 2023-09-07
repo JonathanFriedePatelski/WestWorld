@@ -47,7 +47,7 @@ class PointOfInterestController extends Controller
      */
     public function show(PointOfInterest $pointOfInterest)
     {
-        return $pointOfInterest;
+        return view('pointofinterest.show', ['pointOfInterest' => $pointOfInterest]);
     }
 
     /**

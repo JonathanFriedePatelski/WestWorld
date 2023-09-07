@@ -37,7 +37,7 @@ class HovercraftController extends Controller
      */
     public function show(Hovercraft $hovercraft)
     {
-        return $hovercraft;
+        return view('hovercraft.show', ['hovercraft' => $hovercraft]);
     }
 
     /**

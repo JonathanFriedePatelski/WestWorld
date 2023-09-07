@@ -38,7 +38,7 @@ class IncidentReportController extends Controller
      */
     public function show(Incident $incident)
     {
-        return $incident->pluck('report', 'id');
+        return view('incident.show', ['incident' => $incident->pluck('report', 'id')]);
     }
 
     /**

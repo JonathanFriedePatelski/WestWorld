@@ -37,7 +37,7 @@ class IncidentController extends Controller
      */
     public function show(Incident $incident)
     {
-        return $incident;
+        return view('incident.show', ['incident' => $incident]);
     }
 
     /**
