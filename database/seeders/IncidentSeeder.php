@@ -27,9 +27,6 @@ class IncidentSeeder extends Seeder
                 'type' => $incident['type'],
                 'severity' => $incident['severity'],
             ];
-            if (count($newIncidents) > 60) {
-                break;
-            }
         }
 
         Incident::upsert($newIncidents, ['latitude', 'longitude']);
