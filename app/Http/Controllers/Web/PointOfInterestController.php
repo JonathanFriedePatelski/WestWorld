@@ -14,7 +14,7 @@ class PointOfInterestController extends Controller
      */
     public function index()
     {
-        return PointOfInterest::all();
+        return view('pointofinterest.index', ['pointsOfInterest' => PointOfInterest::all()]);
     }
 
     /**

@@ -18,6 +18,9 @@
                     <x-nav-link class="text-white" :href="route('incidents.index')" :active="request()->routeIs('incidents')">
                         Incidents
                     </x-nav-link>
+                    <x-nav-link class="text-white" :href="route('pointsofinterest.index')" :active="request()->routeIs('incidents')">
+                        POIs
+                    </x-nav-link>
                     <x-nav-link class="text-white" :href="route('crews.index')" :active="request()->routeIs('crews')">
                         Crews
                     </x-nav-link>
