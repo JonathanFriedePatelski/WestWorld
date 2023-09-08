@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\VisitorStatistic;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class VisitorStatisticSeeder extends Seeder
 {
@@ -15,6 +15,9 @@ class VisitorStatisticSeeder extends Seeder
      */
     public function run()
     {
-        VisitorStatistic::upsert(Storage::json('data/visitor_data.json'), 'date');
+        VisitorStatistic::upsert(
+            File::json(database_path('datasets/visitor_data.json')),
+            'date'
+        );
     }
 }

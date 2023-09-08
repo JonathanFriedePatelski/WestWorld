@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\PointOfInterest;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PointOfInterestSeeder extends Seeder
 {
@@ -15,6 +15,9 @@ class PointOfInterestSeeder extends Seeder
      */
     public function run()
     {
-        PointOfInterest::upsert(Storage::json('data/points_of_interest.json'), ['latitude', 'longitude']);
+        PointOfInterest::upsert(
+            File::json(database_path('datasets/points_of_interest.json')),
+            ['lattitude', 'longitude'],
+        );
     }
 }
