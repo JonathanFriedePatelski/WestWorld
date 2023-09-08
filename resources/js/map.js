@@ -313,11 +313,6 @@ controlPanel.onAdd = function () {
     this._div = L.DomUtil.create('div', 'control-panel');
 
     this._div.innerHTML = `
-        <label class="text-white" for="date-filter">Date:</label>
-        <select id="date-filter">
-            <option value="all">All</option>
-        </select>
-
         <label class="text-white" for="poi-filter">POI:</label>
         <select id="poi-filter">
             <option value="all">All</option>
@@ -338,10 +333,6 @@ controlPanel.onAdd = function () {
 };
 
 controlPanel.addTo(map);
-
-document.getElementById("date-filter").addEventListener("change", function () {
-    filterIncidents();
-});
 
 document.getElementById("poi-filter").addEventListener("change", function () {
     filterIncidents();
@@ -366,23 +357,13 @@ document.getElementById("toggle-incidents").addEventListener("click", function (
 });
 
 function populateDropdowns(incidents) {
-    const dateSet = new Set();
     const poiSet = new Set();
 
     incidents.forEach(incident => {
-        dateSet.add(new Date(incident.occurred_at).toLocaleDateString());
         poiSet.add(incident.point_of_interest_id); // Assuming incident has this field
     });
 
-    const dateFilterElem = document.getElementById("date-filter");
     const poiFilterElem = document.getElementById("poi-filter");
-
-    Array.from(dateSet).forEach(date => {
-        const optionElem = document.createElement("option");
-        optionElem.value = date;
-        optionElem.textContent = date;
-        dateFilterElem.appendChild(optionElem);
-    });
 
     // Sorting POIs based on their ID in ascending order
     Array.from(poiSet).sort((a, b) => a - b).forEach(poi => {
@@ -394,9 +375,16 @@ function populateDropdowns(incidents) {
 }
 
 function filterIncidents() {
-    const dateFilterValue = document.getElementById("date-filter").value;
     const poiFilterValue = document.getElementById("poi-filter").value;
     const severityFilterValue = document.getElementById("severity-filter").value;
+
+    if (poiFilterValue === "all" && severityFilterValue === "all") {
+        // Show all incidents
+        incidentMarkers.forEach(marker => {
+            marker.addTo(map);
+        });
+        return;
+    }
 
     // Clear existing markers
     incidentMarkers.forEach(marker => {
@@ -406,14 +394,9 @@ function filterIncidents() {
 
     // Filter the incidents based on the selected criteria
     const filteredIncidents = incidents.filter(incident => {
-        const incidentDate = new Date(incident.occurred_at).toLocaleDateString();
-
-        return (dateFilterValue === "all" || incidentDate === dateFilterValue) &&
-            (poiFilterValue === "all" || incident.point_of_interest_id == poiFilterValue) &&
-            (severityFilterValue === "all" || incident.severity === severityFilterValue);
+        return (incident.point_of_interest_id == poiFilterValue) &&
+               (incident.severity === severityFilterValue);
     });
-
-    console.log("Number of incidents after filtering:", filteredIncidents.length); // Debugging statement
 
     createIncidentMarkers(filteredIncidents);
 }
