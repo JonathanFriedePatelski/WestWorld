@@ -54,7 +54,7 @@
                         Incident type: {{ $incident->type }}
                     </p>
                     <p class="text-black text-xl font-bold leading-tight">
-                        Severity level: {{ $incident->level }}
+                        Severity level: {{ $incident->severity }}
                     </p>
                 </div>
                 @endforeach
