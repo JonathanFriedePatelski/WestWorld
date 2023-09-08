@@ -22,7 +22,7 @@
                     </thead>
                     <tbody>
                         @foreach($pointsOfInterest as $poi)
-                        <tr class="hover:bg-gray-950 cursor-pointer" onclick="window.location.href='{{ route("pointsofinterest.show", $poi->id) }}'">
+                        <tr class="hover:bg-gray-950 cursor-pointer text-white border-2 border-indigo-950 bg-indigo-500"" onclick="window.location.href='{{ route("pointsofinterest.show", $poi->id) }}'">
                             <td class="px-6 py-4">{{ $poi->id }}</td>
                             <td class="px-6 py-4">{{ $poi->title }}</td>
                             <td class="px-6 py-4">{{ $poi->latitude }}</td>

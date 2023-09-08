@@ -19,7 +19,7 @@
                     </thead>
                     <tbody>
                         @foreach($hovercrafts as $hovercraft)
-                        <tr class="hover:bg-gray-950 cursor-pointer" onclick="window.location.href='{{ route("hovercraft.show", $hovercraft->id) }}'">
+                        <tr class="hover:bg-gray-950 cursor-pointer text-white border-2 border-indigo-950 bg-indigo-500" onclick="window.location.href='{{ route("hovercraft.show", $hovercraft->id) }}'">
                             <td class="px-6 py-4 whitespace-no-wrap">{{ $hovercraft->crew_id }}</td>
                             <td class="px-6 py-4 whitespace-no-wrap">{{ $hovercraft->fuel_level }}</td>
                             <td class="px-6 py-4 whitespace-no-wrap">{{ $hovercraft->wear_level }}</td>
