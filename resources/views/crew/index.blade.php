@@ -1,30 +1,18 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-indigo-300 dark:text-gray-200 leading-tight">
-            Crews
-        </h2>
-    </x-slot>
-
-    <div class="py-8">
-        <div class="max-w-7xl m-auto sm:px-6 lg:px-8">
-            <div class="bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
-                <table class="min-w-full bg-gray-900 ">
-                    <thead class="bg-gray-900">
-                        <tr>
-                            <th class="px-6 py-3 bg-indigo-950 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                            <th class="px-6 py-3 bg-indigo-950 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Call Sign</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($crews as $crew)
-                        <tr class="hover:bg-gray-950 cursor-pointer" onclick="window.location.href='{{ route("crews.show", $crew->id) }}'">
-                            <td class=" px-6 py-4">{{ $crew->id }}</td>
-                            <td class="px-6 py-4">{{ $crew->call_sign }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+    <div class="bg-white py-24 sm:py-32 border-red-700 border-2">
+        <div class="mx-auto grid max-w-4xl gap-x-8 gap-y-16 px-4 sm:px-6 lg:px-8 xl:grid-cols-3">
+            @foreach($crews as $crew)
+            <ul role="list" class="grid border border-gray-300  rounded-[120rem]  shaow-md shadow-lg gap-8 sm:grid-cols-2">
+                <li class=p-4 rounded-lg w-fit hover:bg-gray-950 cursor-pointer" onclick="window.location.href='{{ route("crews.show", $crew->id) }}'">
+                    <div class="flex items-center gap-4 w">
+                        <img class="h-16 w-16 rounded-full" src="https://picsum.photos/200" alt="{{ $crew->call_sign }}">
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold text-gray-900">{{ $crew->call_sign }}</h3>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            @endforeach
         </div>
     </div>
 </x-app-layout>
