@@ -31,7 +31,7 @@ Experience.
     - Familiarity with these technologies is assumed.
 1. Acquire the source: `git clone git@bitlab.bit-academy.nl:digital-desperados/digital-desperados.git && cd digital-desperados`
 2. Install dependencies and build assets: `composer install && npm install && npm run build`
-3. Setup database: `php artisan migrate`
+3. Setup database: `php artisan migrate:fresh --seed`
     - Make sure you have a `bit_academy` user set up in your database server, as per
       company convention.
     - You can open a shell into the database with `php artisan db`
