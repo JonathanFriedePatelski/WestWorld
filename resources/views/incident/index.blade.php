@@ -34,6 +34,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $incidents->links() }}
                 </div>
             </div>
         </div>
