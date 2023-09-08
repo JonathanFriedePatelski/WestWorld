@@ -40,57 +40,40 @@
         </div>
 
         <div class="flex flex-col space-y-4 w-2/3 md:w-1/2">
-            <p class="text-black text-2xl font-bold">
-                Incident reports
-            </p>
-
-            <div class="bg-white rounded-md p-4">
-                <p class="text-black text-xl font-bold leading-tight">
-                    Incident type:
-                </p>
-                <p class="text-black text-xl font-bold leading-tight">
-                    Severity level:
-                </p>
-            </div>
-
-            <div class="bg-white rounded-md p-4">
-                <p class="text-black text-xl font-bold leading-tight">
-                    Incident type:
-                </p>
-                <p class="text-black text-xl font-bold leading-tight">
-                    Near points of interest:
-                </p>
-            </div>
-
-            <!-- ... Other blocks ... -->
-
-            // Hide the modal when clicking outside of it
-            document.addEventListener('click', function(event) {
-            var modal = document.getElementById('incident-modal');
-            if (!modal.contains(event.target) && event.target.id !== 'add-incident-btn' && event.target.id !== 'save-incident-btn') {
-            modal.classList.add('hidden');
-            }
-            });
-
-            // Cancel button inside the modal
-            document.getElementById('cancel-incident-btn').addEventListener('click', function() {
-            document.getElementById('incident-modal').classList.add('hidden');
-            });
-            </script>
-
             <div class="flex flex-col space-y-4 w-2/3 md:w-1/2">
                 <p class="text-black text-2xl font-bold">
                     Incident reports
                 </p>
 
+                @foreach(App\Models\Incident::orderByDesc('occurred_at')->with('pointOfInterest:id,title')->limit(3)->get() as $incident)
                 <div class="bg-white rounded-md p-4">
                     <p class="text-black text-xl font-bold leading-tight">
-                        Incident type:
+                        Located near: {{ $incident->pointOfInterest->title }}
                     </p>
                     <p class="text-black text-xl font-bold leading-tight">
-                        Severity level:
+                        Incident type: {{ $incident->type }}
+                    </p>
+                    <p class="text-black text-xl font-bold leading-tight">
+                        Severity level: {{ $incident->level }}
                     </p>
                 </div>
+                @endforeach
             </div>
         </div>
+
+        <script>
+            // Hide the modal when clicking outside of it
+            document.addEventListener('click', function(event) {
+                var modal = document.getElementById('incident-modal');
+                if (!modal.contains(event.target) && event.target.id !== 'add-incident-btn' && event.target.id !== 'save-incident-btn') {
+                    modal.classList.add('hidden');
+                }
+            });
+
+            // Cancel button inside the modal
+            document.getElementById('cancel-incident-btn').addEventListener('click', function() {
+                document.getElementById('incident-modal').classList.add('hidden');
+            });
+        </script>
+
 </x-app-layout>
