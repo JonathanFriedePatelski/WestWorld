@@ -62,6 +62,10 @@
         </div>
 
         <script>
+            document.getElementById('add-incident-btn').addEventListener('click', function() {
+                document.getElementById('incident-modal').classList.toggle('hidden');
+            });
+
             // Hide the modal when clicking outside of it
             document.addEventListener('click', function(event) {
                 var modal = document.getElementById('incident-modal');
