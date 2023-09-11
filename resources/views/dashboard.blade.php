@@ -10,8 +10,8 @@
     </x-slot>
 
     <button class="p-2 ml-6 bg-white text-black p-2 rounded" id="add-incident-btn">Add Incident</button>
-    <div class="flex flex-col justify-around h-screen p-4 md:flex-row bg-gray-800 py-12">
-        <div id="map" class="relative bg-gray-800 w-full md:w-1/2 h-full md:h-auto mb-4 md:mb-0 z-0"></div>
+    <div class="flex flex-col justify-around h-screen p-4 md:flex-row bg-[#1c2c3b] py-12">
+        <div id="map" class="relative bg-[#1c2c3b] w-full md:w-1/2 h-full md:h-auto mb-4 md:mb-0 z-0 border"></div>
 
         <!-- Modal -->
         <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden" id="incident-modal">
@@ -39,21 +39,21 @@
             </div>
         </div>
 
-        <div class="flex flex-col space-y-4 w-2/3 md:w-1/2">
+        <div class="flex flex-col space-y-4 w-2/3 md:w-1/2 p-16">
             <div class="flex flex-col space-y-4 w-2/3 md:w-1/2">
-                <p class="text-black text-2xl font-bold">
+                <p class="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-blue-700 text-2xl font-bold">
                     Incident reports
                 </p>
 
-                @foreach(App\Models\Incident::orderByDesc('occurred_at')->with('pointOfInterest:id,title')->limit(3)->get() as $incident)
-                <div class="bg-white rounded-md p-4">
-                    <p class="text-black text-xl font-bold leading-tight">
+                @foreach(App\Models\Incident::orderByDesc('occurred_at')->with('pointOfInterest:id,title')->limit(6)->get() as $incident)
+                <div class="border rounded-md p-4">
+                    <p class="text-blue-600 text-xl font-bold leading-tight">
                         Located near: {{ $incident->pointOfInterest->title }}
                     </p>
-                    <p class="text-black text-xl font-bold leading-tight">
+                    <p class="text-blue-300 text-xl font-bold leading-tight">
                         Incident type: {{ $incident->type }}
                     </p>
-                    <p class="text-black text-xl font-bold leading-tight">
+                    <p class="text-blue-200 text-xl font-bold leading-tight">
                         Severity level: {{ $incident->severity }}
                     </p>
                 </div>
