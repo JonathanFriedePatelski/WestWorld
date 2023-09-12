@@ -39,14 +39,14 @@
             </div>
         </div>
 
-        <div class="flex flex-col space-y-4 w-2/3 md:w-1/2 p-16">
+        <div class="flex flex-col space-y-4 w-2/3 md:w-1/2">
             <div class="flex flex-col space-y-4 w-2/3 md:w-1/2">
-                <p class="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-blue-700 text-2xl font-bold">
+                <p class="drop-shadow-[1.2px_rgba(0,0,0,0.8)] ml-9 mt-5 text-blue-700 text-2xl font-bold">
                     Incident reports
                 </p>
 
                 @foreach(App\Models\Incident::orderByDesc('occurred_at')->with('pointOfInterest:id,title')->limit(6)->get() as $incident)
-                <div class="border rounded-md p-4">
+                <div class="border rounded-md p-4 ml-9 mt-5">
                     <p class="text-blue-600 text-xl font-bold leading-tight">
                         Located near: {{ $incident->pointOfInterest->title }}
                     </p>
