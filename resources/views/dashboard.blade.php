@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <button class="p-2 ml-6 bg-white text-black p-2 rounded" id="add-incident-btn">Add Incident</button>
+    <button class="p-2 ml-6 bg-white text-black rounded" id="add-incident-btn">Add Incident</button>
     <div class="flex flex-col justify-around h-screen p-4 md:flex-row bg-[#1c2c3b] py-12">
         <div id="map" class="relative bg-[#1c2c3b] w-full md:w-1/2 h-full md:h-auto mb-4 md:mb-0 z-0 border"></div>
 
