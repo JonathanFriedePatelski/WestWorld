@@ -39,14 +39,14 @@
             </div>
         </div>
 
-        <div class="flex flex-col space-x-7 w-2/3 md:w-1/2">
-            <div class="flex flex-col space-y-4 w-2/3 md:w-1/2">
-                <p class="drop-shadow-[1.2px_rgba(0,0,0,0.8)] ml-9 mt-5 text-blue-700 text-2xl font-bold">
+        <div class="flex flex-col space-x-4 w-2/3 md:w-1/2">
+            <div class="flex flex-col space-y-10 w-2/3 md:w-1/2 outline-2">
+                <p class="ml-9 mt-5 text-blue-700 text-2xl font-bold">
                     Unclaimed Incidents
                 </p>
 
                 @foreach(App\Models\Incident::orderByDesc('occurred_at')->with('pointOfInterest:id,title')->limit(6)->get() as $incident)
-                <div class="border-teal-800 rounded-md p-4 ml-9 mt-5 bg-black shadow-gray-600 hover:shadow-indigo-500/50 hover:shadow-2xl shadow-lg hover:border-8">
+                <div class="rounded-md p-4 ml-9 mt-5 bg-black shadow-gray-600 hover:shadow-indigo-500/50 hover:shadow-2xl shadow-2xl outline outline-offset-0 outline-2 hover:outline-teal-800 ">
                     <p class="text-blue-600 text-xl font-bold leading-tight">
                         Located near: {{ $incident->pointOfInterest->title }}
                     </p>
